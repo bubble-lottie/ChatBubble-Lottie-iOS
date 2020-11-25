@@ -1,0 +1,16 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+
+target 'animationDemo2' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  #use_frameworks!
+
+  # Pods for animationDemo2
+  pod 'SDWebImage'#, '5.9.1'
+  pod 'SVProgressHUD'#, '2.2.5'
+  pod 'Masonry'#, '1.1.0'
+  # OC分支版本只到2.5.3，更新swift请使用最新版本
+#  pod 'lottie-ios', '2.5.3'#, '3.1.8'
+
+end

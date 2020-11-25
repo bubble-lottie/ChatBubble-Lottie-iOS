@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sxE-Lx-adv">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="il4-5P-to7">
+            <objects>
+                <navigationController id="sxE-Lx-adv" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S9j-UI-tmL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cVz-7r-oDi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1vg-D8-e04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-848" y="-40"/>
+        </scene>
+        <!--动画-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="动画" id="qFb-JL-g2p">
+                        <barButtonItem key="rightBarButtonItem" title="选择动画文件" id="P40-2E-lBL">
+                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="selectedButtonItemClick:" destination="BYZ-38-t0r" id="YHO-SO-bbo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-170" y="-40"/>
+        </scene>
+        <!--Store-->
+        <scene sceneID="9bh-2N-x2a">
+            <objects>
+                <viewController id="zkk-2O-70W" userLabel="Store" customClass="LOTTIESelectedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SCX-KY-P7y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8fC-EY-Zzh">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hlf-3Y-poh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="a0h-YW-kKf">
+                                        <rect key="frame" x="50" y="15" width="314" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGb-dV-WRs">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="30"/>
+                                                <state key="normal" title="recent">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="recentButtonClick:" destination="zkk-2O-70W" eventType="touchUpInside" id="5MX-MH-60c"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="td1-d2-eoK">
+                                                <rect key="frame" x="123.5" y="0.0" width="53" height="30"/>
+                                                <state key="normal" title="popular">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected" title="popular">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="popularButtonClick:" destination="zkk-2O-70W" eventType="touchUpInside" id="4jo-tP-wsI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLO-rO-5hT">
+                                                <rect key="frame" x="256" y="0.0" width="58" height="30"/>
+                                                <state key="normal" title="featured">
+                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="featuredButtonClick:" destination="zkk-2O-70W" eventType="touchUpInside" id="12x-Bn-hnO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="a0h-YW-kKf" firstAttribute="leading" secondItem="Hlf-3Y-poh" secondAttribute="leading" constant="50" id="W4U-U2-N2y"/>
+                                    <constraint firstItem="a0h-YW-kKf" firstAttribute="centerY" secondItem="Hlf-3Y-poh" secondAttribute="centerY" id="jrk-sh-0lF"/>
+                                    <constraint firstAttribute="height" constant="60" id="qOe-lO-JTm"/>
+                                    <constraint firstItem="a0h-YW-kKf" firstAttribute="centerX" secondItem="Hlf-3Y-poh" secondAttribute="centerX" id="rQa-fJ-UDY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8fC-EY-Zzh" firstAttribute="top" secondItem="Hlf-3Y-poh" secondAttribute="bottom" id="0Jk-Mx-PS4"/>
+                            <constraint firstItem="Hlf-3Y-poh" firstAttribute="leading" secondItem="XGH-Xh-06z" secondAttribute="leading" id="3b6-Ib-WH0"/>
+                            <constraint firstItem="XGH-Xh-06z" firstAttribute="bottom" secondItem="8fC-EY-Zzh" secondAttribute="bottom" id="Dnl-Ur-CLT"/>
+                            <constraint firstItem="Hlf-3Y-poh" firstAttribute="top" secondItem="XGH-Xh-06z" secondAttribute="top" id="GOh-ga-0YM"/>
+                            <constraint firstItem="8fC-EY-Zzh" firstAttribute="leading" secondItem="XGH-Xh-06z" secondAttribute="leading" id="Kb0-yy-74b"/>
+                            <constraint firstItem="XGH-Xh-06z" firstAttribute="trailing" secondItem="8fC-EY-Zzh" secondAttribute="trailing" id="k8l-uU-To0"/>
+                            <constraint firstItem="XGH-Xh-06z" firstAttribute="trailing" secondItem="Hlf-3Y-poh" secondAttribute="trailing" id="xpH-Qh-wsn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XGH-Xh-06z"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="动画文件分类" id="0W3-U5-S90"/>
+                    <connections>
+                        <outlet property="featuredButton" destination="iLO-rO-5hT" id="tSn-xY-twD"/>
+                        <outlet property="popularButton" destination="td1-d2-eoK" id="MeG-Ko-MP1"/>
+                        <outlet property="recentButton" destination="GGb-dV-WRs" id="KVt-NC-SCq"/>
+                        <outlet property="tableView" destination="8fC-EY-Zzh" id="psH-Lf-6hz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yuo-4x-QEG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1487" y="-40"/>
+        </scene>
+    </scenes>
+</document>
