@@ -176,8 +176,8 @@
         
         _positionY = [[LOTKeyframeGroup alloc] initWithData:position[@"y"] calculationType:pType orignSize:orignSize canvasSize:canvasSize];
     } else {
-        NSInteger pType = _transformationMode.integerValue & 0x000fff;
 //        _position = [[LOTKeyframeGroup alloc] initWithData:position];
+        NSInteger pType = _transformationMode.integerValue & 0x000fff;
         _position = [[LOTKeyframeGroup alloc] initWithData:position calculationType:pType orignSize:orignSize canvasSize:canvasSize];
     }
     
@@ -188,6 +188,7 @@
     
     NSDictionary *scale = ks[@"s"];
     if (scale) {
+//        _scale = [[LOTKeyframeGroup alloc] initWithData:scale];
         NSInteger sType = (_transformationMode.integerValue & 0xfff000) >> 12;
         _scale = [[LOTKeyframeGroup alloc] initWithData:scale calculationType:sType orignSize:orignSize canvasSize:canvasSize layerSize:_layerBounds.size];
         

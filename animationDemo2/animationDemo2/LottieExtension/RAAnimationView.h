@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithContentsOfURL:(NSURL *)url canvasSize:(CGSize)canvasSize;
 
+- (void)setAnimationWithContentsOfURL:(NSURL *)url cavasSize:(CGSize)canvasSize;
+
 @end
 
 NS_ASSUME_NONNULL_END

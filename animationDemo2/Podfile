@@ -10,6 +10,7 @@ target 'animationDemo2' do
   pod 'SDWebImage'#, '5.9.1'
   pod 'SVProgressHUD'#, '2.2.5'
   pod 'Masonry'#, '1.1.0'
+  pod 'MJRefresh'
   # OC分支版本只到2.5.3，更新swift请使用最新版本
 #  pod 'lottie-ios', '2.5.3'#, '3.1.8'
 

@@ -7,9 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "Lottie.h"
-#import <Masonry.h>
-#import "RAAnimationView.h"
+#import <MJRefresh.h>
+#import "AnimationTableViewCell.h"
 
 #import "SelectedViewController.h"
 
@@ -21,11 +20,11 @@
 /// <#Description#>
 @property (nonatomic, strong) UITableView *tableView;
 
-/// <#Description#>
-@property (nonatomic, strong) NSMutableDictionary *heightCache;
+/// 使用的数组
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
-/// <#Description#>
-@property (nonatomic, strong) NSMutableDictionary *widthCache;
+/// 原貌对比数据数组
+@property (nonatomic, strong) NSArray *sourseArray;
 
 @end
 
@@ -50,24 +49,45 @@
         _tableView.dataSource = self;
         
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+        [_tableView registerClass:AnimationTableViewCell.class forCellReuseIdentifier:@"animationCell"];
+        
+        _tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(addMore)];
     }
     return _tableView;
 }
 
-- (NSMutableDictionary *)heightCache {
-    if (!_heightCache) {
-        _heightCache = [NSMutableDictionary dictionary];
-        [_heightCache setValue:@(92) forKey:@"10"];
+- (NSArray *)sourseArray {
+    if (!_sourseArray) {
+        _sourseArray = @[
+            [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"edgeBall_orgin" ofType:@"json"]],
+        ];
     }
-    return _heightCache;
+    return _sourseArray;
 }
 
-- (NSMutableDictionary *)widthCache {
-    if (!_widthCache) {
-        _widthCache = [NSMutableDictionary dictionary];
-        [_widthCache setValue:@(128) forKey:@"10"];
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+        
+        for (int i=0; i<self.sourseArray.count; i++) {
+            TextAnimationModel *model = [[TextAnimationModel alloc] init];
+            model.animationURL = self.sourseArray[i];
+            model.defaultSize = CGSizeMake(128, 72);
+            
+            [_dataArray addObject:model];
+        }
     }
-    return _widthCache;
+    return _dataArray;
+}
+
+- (void)addMore {
+    //此处开始添加随机出现的文本
+    for (int i=0; i<10; i++) {
+        [self.dataArray addObject:[TextAnimationModel randomModelWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"edgeBall_test" ofType:@"json"]] defaultSize:CGSizeMake(69, 40)]];
+    }
+    [self.tableView.mj_footer endRefreshing];
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDelegate
@@ -76,93 +96,58 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1000;
+    return self.dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.heightCache[@(indexPath.row+10).stringValue] && self.widthCache[@(indexPath.row+10).stringValue]) {
-        return ((NSNumber *)self.heightCache[@(indexPath.row+10).stringValue]).floatValue;
+    TextAnimationModel *model = self.dataArray[indexPath.row];
+    if (!model) {
+        model = [TextAnimationModel randomModelWithURL:[NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"edgeBall_test" ofType:@"json"]] defaultSize:CGSizeMake(69, 40)];
+        [self.dataArray insertObject:model atIndex:indexPath.row];
     }
-    CGFloat height = arc4random()%300+40+20;
-    [self.heightCache setValue:@(height) forKey:@(indexPath.row+10).stringValue];
-    CGFloat wight = SCREEN_W-arc4random()%((int)SCREEN_W-60);
-    [self.widthCache setValue:@(wight) forKey:@(indexPath.row+10).stringValue];
-    return height;
+    return model.animationSize.height+20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    AnimationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"animationCell" forIndexPath:indexPath];
     
-    NSNumber *viewHeight = [self.heightCache valueForKey:@(indexPath.row+10).stringValue];
-    NSNumber *viewWidth = [self.widthCache valueForKey:@(indexPath.row+10).stringValue];
-    
-    if (!viewHeight.boolValue || !viewWidth.boolValue) {
-        return cell;
-    }
-    
-    for (UIView *subView in cell.subviews) {
-        if ([subView isKindOfClass:[RAAnimationView class]]) {
-            [subView removeFromSuperview];
-        }
-    }
-    
-    NSString *filePath;
-    if (indexPath.row == 0) {
-        filePath = [[NSBundle mainBundle] pathForResource:@"edgeBall_orgin" ofType:@"json"];
-    } else {
-        filePath = [[NSBundle mainBundle] pathForResource:@"edgeBall_test" ofType:@"json"];
-    }
-    
-    NSURL *fileURL = [NSURL fileURLWithPath:filePath];
-    
-    RAAnimationView *animationView =
-    [[RAAnimationView alloc] initWithContentsOfURL:fileURL
-                                        canvasSize:CGSizeMake(viewWidth.floatValue, viewHeight.floatValue-20)];
-    
-    animationView.contentMode = UIViewContentModeScaleAspectFit;
-    animationView.backgroundColor = [UIColor darkGrayColor];
-    
-    [cell addSubview:animationView];
-    
-    [animationView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo((SCREEN_W-viewWidth.floatValue)/2);
-        make.right.mas_equalTo(-(SCREEN_W-viewWidth.floatValue)/2);
-        make.top.mas_equalTo(10);
-        make.bottom.mas_equalTo(-10);
-    }];
+    cell.model = self.dataArray[indexPath.row];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    RAAnimationView *animationView;
-    for (UIView *subView in cell.subviews) {
-        if ([subView isKindOfClass:[RAAnimationView class]]) {
-            animationView = (RAAnimationView *)subView;
-        }
-    }
+    RAAnimationView *animationView = [self searchAnimationView:cell];
     
     [animationView play];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    RAAnimationView *animationView;
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    for (UIView *subView in cell.subviews) {
-        if ([subView isKindOfClass:[RAAnimationView class]]) {
-            animationView = (RAAnimationView *)subView;
-        }
-    }
+    
+    RAAnimationView *animationView = [self searchAnimationView:cell];
     
     [animationView play];
 }
 
 - (IBAction)selectedButtonItemClick:(UIBarButtonItem *)sender {
 //    self.navigationController pushViewController:<#(nonnull UIViewController *)#> animated:<#(BOOL)#>
+}
+
+- (RAAnimationView *)searchAnimationView:(UIView *)superView {
+    NSLog(@"单曲：%@", superView);
+    RAAnimationView *animationView;
+    for (UIView *subView in superView.subviews) {
+        if ([subView isKindOfClass:[RAAnimationView class]]) {
+            return (RAAnimationView *)subView;
+        } else {
+            animationView = [self searchAnimationView:subView];
+            if (animationView != nil) {
+                return animationView;
+            }
+        }
+    }
+    return animationView;
 }
 
 #pragma mark - SelectedViewControllerDelegate

@@ -312,7 +312,7 @@ static NSString * const kCompContainerAnimationKey = @"play";
 
 # pragma mark - External Methods - Model
 
-- (void)setSceneModel:(LOTComposition *)sceneModel {
+- (void)setSceneModel:(LOTComposition *)sceneModel { 
   [self _setupWithSceneModel:sceneModel];
 }
 

@@ -1,5 +1,6 @@
 PODS:
   - Masonry (1.1.0)
+  - MJRefresh (3.5.0)
   - SDWebImage (5.9.1):
     - SDWebImage/Core (= 5.9.1)
   - SDWebImage/Core (5.9.1)
@@ -7,20 +8,23 @@ PODS:
 
 DEPENDENCIES:
   - Masonry
+  - MJRefresh
   - SDWebImage
   - SVProgressHUD
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - Masonry
+    - MJRefresh
     - SDWebImage
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 9b0fc281de1a5a5a080146471fdf0cc0e0f2a561
+PODFILE CHECKSUM: e1de95b0884ff0cb75a93211c15d2d127c3e667b
 
 COCOAPODS: 1.8.4

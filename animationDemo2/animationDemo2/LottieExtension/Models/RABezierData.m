@@ -167,6 +167,11 @@
             value = value-diff/2;
         }
             break;
+//        case 6:{
+//            //图片比例s的修改，
+//            value = value+diff*100/imageSize;
+//        }
+//            break;
     }
     return value;
 }
