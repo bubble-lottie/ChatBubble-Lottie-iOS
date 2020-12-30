@@ -206,5 +206,4 @@
     _pointValue = CGPointMake(remapBlock(_pointValue.x), remapBlock(_pointValue.y));
     _sizeValue = CGSizeMake(remapBlock(_sizeValue.width), remapBlock(_sizeValue.height));
 }
-
 @end

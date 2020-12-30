@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8608DBF1253578BF0063538E /* fox.json in Resources */ = {isa = PBXBuildFile; fileRef = 8608DBF0253578BE0063538E /* fox.json */; };
-		8608DBF32535796E0063538E /* fox_orgin.json in Resources */ = {isa = PBXBuildFile; fileRef = 8608DBF22535796E0063538E /* fox_orgin.json */; };
 		861B6560254BF40B00D9D6A3 /* SelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 861B655F254BF40B00D9D6A3 /* SelectedViewController.m */; };
 		861B6563254BFDEB00D9D6A3 /* RASelectedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 861B6562254BFDEB00D9D6A3 /* RASelectedTableViewCell.m */; };
 		86462A36250F678F008A04FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86462A35250F678F008A04FC /* AppDelegate.m */; };
@@ -105,6 +103,8 @@
 		86AA50052510A6670068735F /* RALayerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AA50042510A6670068735F /* RALayerGroup.m */; };
 		86AA50082510A9DA0068735F /* RALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AA50072510A9DA0068735F /* RALayer.m */; };
 		86AA50132510C5360068735F /* LOTKeyframeGroup+RAKeyFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AA50122510C5360068735F /* LOTKeyframeGroup+RAKeyFrame.m */; };
+		86D48080259B33A700A5714D /* AnimationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D4807F259B33A700A5714D /* AnimationTableViewCell.m */; };
+		86D48084259B344200A5714D /* TextAnimationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D48083259B344200A5714D /* TextAnimationModel.m */; };
 		86F033AC251AD6090023CB99 /* edgeBall_orgin.json in Resources */ = {isa = PBXBuildFile; fileRef = 86F033AB251AD6090023CB99 /* edgeBall_orgin.json */; };
 		86F033AE251AD6170023CB99 /* edgeBall_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 86F033AD251AD6170023CB99 /* edgeBall_test.json */; };
 		86F033B5251B329F0023CB99 /* LOTLayerContainer+RALayerContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F033B4251B329F0023CB99 /* LOTLayerContainer+RALayerContainer.m */; };
@@ -117,8 +117,6 @@
 		2C47A5D7BA67B7FC9B1C7EA3 /* libPods-animationDemo2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-animationDemo2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67573ED657E421B961934B93 /* Pods-animationDemo2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animationDemo2.debug.xcconfig"; path = "Target Support Files/Pods-animationDemo2/Pods-animationDemo2.debug.xcconfig"; sourceTree = "<group>"; };
 		6BCFAD353A7A92AEB2752A9C /* Pods-animationDemo2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animationDemo2.release.xcconfig"; path = "Target Support Files/Pods-animationDemo2/Pods-animationDemo2.release.xcconfig"; sourceTree = "<group>"; };
-		8608DBF0253578BE0063538E /* fox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fox.json; sourceTree = "<group>"; };
-		8608DBF22535796E0063538E /* fox_orgin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fox_orgin.json; sourceTree = "<group>"; };
 		861B655E254BF40B00D9D6A3 /* SelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectedViewController.h; sourceTree = "<group>"; };
 		861B655F254BF40B00D9D6A3 /* SelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectedViewController.m; sourceTree = "<group>"; };
 		861B6561254BFDEB00D9D6A3 /* RASelectedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RASelectedTableViewCell.h; sourceTree = "<group>"; };
@@ -308,6 +306,10 @@
 		86AA50072510A9DA0068735F /* RALayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RALayer.m; sourceTree = "<group>"; };
 		86AA50112510C5360068735F /* LOTKeyframeGroup+RAKeyFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LOTKeyframeGroup+RAKeyFrame.h"; sourceTree = "<group>"; };
 		86AA50122510C5360068735F /* LOTKeyframeGroup+RAKeyFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LOTKeyframeGroup+RAKeyFrame.m"; sourceTree = "<group>"; };
+		86D4807E259B33A700A5714D /* AnimationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationTableViewCell.h; sourceTree = "<group>"; };
+		86D4807F259B33A700A5714D /* AnimationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationTableViewCell.m; sourceTree = "<group>"; };
+		86D48082259B344200A5714D /* TextAnimationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextAnimationModel.h; sourceTree = "<group>"; };
+		86D48083259B344200A5714D /* TextAnimationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextAnimationModel.m; sourceTree = "<group>"; };
 		86F033AB251AD6090023CB99 /* edgeBall_orgin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = edgeBall_orgin.json; sourceTree = "<group>"; };
 		86F033AD251AD6170023CB99 /* edgeBall_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = edgeBall_test.json; sourceTree = "<group>"; };
 		86F033B3251B329F0023CB99 /* LOTLayerContainer+RALayerContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LOTLayerContainer+RALayerContainer.h"; sourceTree = "<group>"; };
@@ -365,6 +367,10 @@
 				86462A38250F678F008A04FC /* SceneDelegate.m */,
 				86462A3A250F678F008A04FC /* ViewController.h */,
 				86462A3B250F678F008A04FC /* ViewController.m */,
+				86D48082259B344200A5714D /* TextAnimationModel.h */,
+				86D48083259B344200A5714D /* TextAnimationModel.m */,
+				86D4807E259B33A700A5714D /* AnimationTableViewCell.h */,
+				86D4807F259B33A700A5714D /* AnimationTableViewCell.m */,
 				861B655E254BF40B00D9D6A3 /* SelectedViewController.h */,
 				861B655F254BF40B00D9D6A3 /* SelectedViewController.m */,
 				861B6561254BFDEB00D9D6A3 /* RASelectedTableViewCell.h */,
@@ -373,10 +379,22 @@
 				86F033B7251B44EE0023CB99 /* LOTTIESelectedViewController.m */,
 				86F033B9251B54C20023CB99 /* AnimationPreviewTableViewCell.h */,
 				86F033BA251B54C20023CB99 /* AnimationPreviewTableViewCell.m */,
+				8654DF30259427A7006F15F2 /* JsonSourse */,
 				86AA4FF4251097C00068735F /* LottieExtension */,
+				86462A3D250F678F008A04FC /* Main.storyboard */,
+				86462A40250F6794008A04FC /* Assets.xcassets */,
+				86462A42250F6794008A04FC /* LaunchScreen.storyboard */,
+				86462A45250F6794008A04FC /* Info.plist */,
+				86462A46250F6794008A04FC /* main.m */,
+				86AA4F23251090F40068735F /* lottie-ios */,
+			);
+			path = animationDemo2;
+			sourceTree = "<group>";
+		};
+		8654DF30259427A7006F15F2 /* JsonSourse */ = {
+			isa = PBXGroup;
+			children = (
 				86AA4E54251090120068735F /* LottieLogo1.json */,
-				8608DBF22535796E0063538E /* fox_orgin.json */,
-				8608DBF0253578BE0063538E /* fox.json */,
 				86462A52250F7DA9008A04FC /* LottieLogo2.json */,
 				8679773A2513088A0083514B /* blueStar.json */,
 				86462A4D250F6D8A008A04FC /* blueStar_orign.json */,
@@ -386,14 +404,8 @@
 				86F033AB251AD6090023CB99 /* edgeBall_orgin.json */,
 				86A3016325207FAF001A0B1E /* edgeBall_test2.json */,
 				86F033AD251AD6170023CB99 /* edgeBall_test.json */,
-				86462A3D250F678F008A04FC /* Main.storyboard */,
-				86462A40250F6794008A04FC /* Assets.xcassets */,
-				86462A42250F6794008A04FC /* LaunchScreen.storyboard */,
-				86462A45250F6794008A04FC /* Info.plist */,
-				86462A46250F6794008A04FC /* main.m */,
-				86AA4F23251090F40068735F /* lottie-ios */,
 			);
-			path = animationDemo2;
+			path = JsonSourse;
 			sourceTree = "<group>";
 		};
 		86AA4F23251090F40068735F /* lottie-ios */ = {
@@ -765,7 +777,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8608DBF1253578BF0063538E /* fox.json in Resources */,
 				867049A02514A4D400CC5B3B /* PinJump_test.json in Resources */,
 				86F033AE251AD6170023CB99 /* edgeBall_test.json in Resources */,
 				86462A44250F6794008A04FC /* LaunchScreen.storyboard in Resources */,
@@ -775,7 +786,6 @@
 				86462A53250F7DA9008A04FC /* LottieLogo2.json in Resources */,
 				86797742251366970083514B /* PinJump_orign.json in Resources */,
 				86462A4E250F6D8B008A04FC /* blueStar_orign.json in Resources */,
-				8608DBF32535796E0063538E /* fox_orgin.json in Resources */,
 				86A3016425207FAF001A0B1E /* edgeBall_test2.json in Resources */,
 				8670499E25149F1700CC5B3B /* abc.json in Resources */,
 				8679773B2513088A0083514B /* blueStar.json in Resources */,
@@ -890,10 +900,12 @@
 				86AA4FC7251090F50068735F /* LOTStrokeRenderer.m in Sources */,
 				86AA4FD0251090F50068735F /* LOTLayer.m in Sources */,
 				86462A47250F6794008A04FC /* main.m in Sources */,
+				86D48080259B33A700A5714D /* AnimationTableViewCell.m in Sources */,
 				86AA4FFF2510A11B0068735F /* RAComposition.m in Sources */,
 				86AA4FBB251090F50068735F /* LOTValueInterpolator.m in Sources */,
 				867977392513024A0083514B /* RAShapeRepeater.m in Sources */,
 				86AA4FDD251090F50068735F /* LOTShapeTransform.m in Sources */,
+				86D48084259B344200A5714D /* TextAnimationModel.m in Sources */,
 				86AA4FCF251090F50068735F /* LOTMask.m in Sources */,
 				86AA4FE4251090F50068735F /* LOTComposition.m in Sources */,
 				86AA4FD6251090F50068735F /* LOTAsset.m in Sources */,
@@ -1061,7 +1073,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6DT57K24F5;
 				INFOPLIST_FILE = animationDemo2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1080,7 +1092,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6DT57K24F5;
 				INFOPLIST_FILE = animationDemo2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

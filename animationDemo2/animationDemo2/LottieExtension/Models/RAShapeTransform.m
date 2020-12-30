@@ -54,7 +54,8 @@
     
     NSDictionary *scale = jsonDictionary[@"s"];
     if (scale) {
-        _scale = [[LOTKeyframeGroup alloc] initWithData:scale];
+        NSInteger sType = (_transformationMode.integerValue & 0xfff000) >> 12;
+        _scale = [[LOTKeyframeGroup alloc] initWithData:scale calculationType:sType orignSize:orignSize canvasSize:canvasSize];
         [_scale remapKeyframesWithBlock:^CGFloat(CGFloat inValue) {
             return LOT_RemapValue(inValue, -100, 100, -1, 1);
         }];
