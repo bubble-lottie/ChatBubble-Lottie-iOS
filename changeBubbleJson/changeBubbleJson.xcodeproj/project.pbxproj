@@ -14,7 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8608DBFD2536C64E0063538E /* changeBubbleJson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changeBubbleJson.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8608DBFD2536C64E0063538E /* 气泡转换工具.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "气泡转换工具.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8608DC002536C64E0063538E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8608DC022536C64E0063538E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8608DC042536C6540063538E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		8608DBFE2536C64E0063538E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8608DBFD2536C64E0063538E /* changeBubbleJson.app */,
+				8608DBFD2536C64E0063538E /* 气泡转换工具.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,7 +80,7 @@
 			);
 			name = changeBubbleJson;
 			productName = changeBubbleJson;
-			productReference = 8608DBFD2536C64E0063538E /* changeBubbleJson.app */;
+			productReference = 8608DBFD2536C64E0063538E /* 气泡转换工具.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -280,8 +280,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jixiultdco.changeBubbleJson;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "气泡转换工具";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -301,8 +302,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jixiultdco.changeBubbleJson;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "气泡转换工具";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
